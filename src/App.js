@@ -1,16 +1,24 @@
 import "./App.css";
+import Weather from "./Weather";
 
 function App() {
   return (
     <div className="App">
-      <h1>Weather App</h1>
-      <footer>
-        This project was coded by Daria Mikita{" "}
-        <a href="#" target="_blank">
-          {" "}
-          My Github
-        </a>
-      </footer>
+      <div className="Container">
+        <h1>Weather App</h1>
+        <Weather />
+        <footer>
+          This project was coded by Daria Mikita{" "}
+          <a
+            href="https://github.com/nauticalstars/weather-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            My Github
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }
