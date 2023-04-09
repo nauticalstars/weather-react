@@ -22,18 +22,20 @@
   list-style: none;
   font-size: 16px;
   font-weight: 100;
-  line-height: 16px;
+  line-height: 20px;
 }
 .Weather img {
   height: 64px;
+  width: 64px;
   display: inline-block;
   margin-right: 10px;
+  aspect-ratio: auto 60 / 60;
 }
 .Weather .unit {
   font-size: 16px;
   font-weight: 400;
   position: relative;
-  top: -32px;
+  top: -15px;
 }
 .Weather .temperature {
   font-weight: bold;
@@ -42,4 +44,5 @@
   line-height: 64px;
   color: #878787;
   position: relative;
+  top: 20px;
 }
