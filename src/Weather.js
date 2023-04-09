@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { BallTriangle } from "react-loader-spinner";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
   const [WeatherData, setWeatherData] = useState({ loaded: false });
   function handleResponse(response) {
     console.log(response.data);
@@ -17,7 +18,7 @@ export default function Weather() {
       icon: response.data.condition.icon,
       humidity: Math.round(response.data.temperature.humidity),
       wind: Math.round(response.data.wind.speed),
-      date: "Wednesday 07:00 pm",
+      date: new Date(response.data.time * 1000),
     });
   }
   if (WeatherData.loaded) {
@@ -44,7 +45,9 @@ export default function Weather() {
         </form>
         <h1>{WeatherData.city}</h1>
         <ul>
-          <li>{WeatherData.date}</li>
+          <li>
+            <FormattedDate date={WeatherData.date} />
+          </li>
           <li className="text-capitalize">{WeatherData.description}</li>
         </ul>
         <div className="row mt-3">
@@ -65,8 +68,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "89045e8b02ffo7bc061tb52f38ead08c";
-    let city = "Vancouver";
-    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    let url = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
     axios.get(url).then(handleResponse);
     return (
       <BallTriangle
