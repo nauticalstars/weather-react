@@ -29,17 +29,10 @@
   font-size: 16px;
   font-weight: 400;
   position: relative;
-  top: -40px;
+  top: -30px;
   right: 5px;
 }
 
-.Weather canvas {
-  height: 70px;
-  width: 70px;
-  display: inline-block;
-  margin-top: 5px;
-  margin-right: 10px;
-}
 .Weather .temperature {
   font-weight: bold;
   font-size: 64px;
@@ -47,5 +40,12 @@
   line-height: 64px;
   color: #878787;
   position: relative;
-  top: -5px;
+  top: 10px;
+}
+.Weather canvas {
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-right: 10px;
 }
