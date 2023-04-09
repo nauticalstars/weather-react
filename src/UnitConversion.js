@@ -21,6 +21,7 @@ export default function UnitConversion(props) {
       <div className="UnitConversion">
         <span className="temperature">{props.celsius}</span>
         <span className="unit">
+          {" "}
           °C |{" "}
           <a href="/" className="text-decoration-none" onClick={convertToF}>
             °F
