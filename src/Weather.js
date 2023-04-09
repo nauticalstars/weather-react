@@ -1,50 +1,84 @@
-import React from "react";
+import React, { useState } from "react";
+import { BallTriangle } from "react-loader-spinner";
 import "./Weather.css";
+import axios from "axios";
 
 export default function Weather() {
-  return (
-    <div className="Weather">
-      <form>
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="City name..."
-              className="form-control"
-              autoFocus="on"
-            />
+  const [WeatherData, setWeatherData] = useState({ loaded: false });
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+      loaded: true,
+      temperature: Math.round(response.data.temperature.current),
+      city: response.data.city,
+      feels: Math.round(response.data.temperature.feels_like),
+      description: response.data.condition.description,
+      icon_url: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
+      humidity: Math.round(response.data.temperature.humidity),
+      wind: Math.round(response.data.wind.speed),
+      date: "Wednesday 07:00 pm",
+    });
+  }
+  if (WeatherData.loaded) {
+    return (
+      <div className="Weather">
+        <form>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="City name..."
+                className="form-control"
+                autoFocus="on"
+              />
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-outline-danger w-100"
+              />
+            </div>
           </div>
-          <div className="col-3">
-            <input
-              type="submit"
-              value="Search"
-              className="btn btn-outline-danger w-100"
-            />
+        </form>
+        <h1>{WeatherData.city}</h1>
+        <ul>
+          <li>{WeatherData.date}</li>
+          <li className="text-capitalize">{WeatherData.description}</li>
+        </ul>
+        <div className="row mt-3">
+          <div className="col-6">
+            <img src={WeatherData.icon_url} alt={WeatherData.icon} />
+            <span className="temperature">{WeatherData.temperature}</span>
+            <span className="unit">°C</span>
           </div>
-        </div>
-      </form>
-      <h1>Winnipeg</h1>
-      <ul>
-        <li>Wednesday 07:00 pm</li>
-        <li>Mostly Cloudy</li>
-      </ul>
-      <div className="row mt-3">
-        <div className="col-6">
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAb5JREFUeNrtmtuNgzAQRSmBElwCJbgESuBzy6AESnAJlEAJ/PJHOqAD73g10QJa8sJ4huUiXSlyHMX3jM34lXnvsysrAwAAAAAAAAAAAAAAAAAAAIDfwg8ff/sypIrkSD3Jb6jnOqGuyRI/0QGQCUtqHxh+pvBbezoAbLzbYXytLgWI3QCokTmpiWh8rUYtADbfH2h+/p7IVQGgBhWkKYH5u8bwnyoAcORTmp9DyEUBJOz2m8NBGkAjaD76i/EtAJzqvBJZCQCdIgBdUgDKoh+tF7wDoFUIoE0CgBc2XqnyFAAqYZNhtVjyMLT8OZTVoX3DMBiSI00kz5q4zMQA4KRy/rPZHxksVsbXCt8VewH0QuZzanxQ/Ud0a478I/Pz+mYPAInoFxzh/gWDr8idCYBj83Uk8z+94CMAQhmgZABTRAD+LD0gzDYNj31/gBbZQRuAavZ2PwrAIjtoAlCx8ZI0Hmx+kR00pMFuZt4nltMwEbpHfxQAMGmYCtsEY35T4ouhTPBRsRw+C4Brb4hcfksMm6LYFsfBCI7GcDiK43FckMAVGVySuto1OdwUBQAAAAAAAAAAAAAAAAAA+Pf6Bm5v6/1bJGiwAAAAAElFTkSuQmCC"
-            alt="partly cloudy"
-          />
-          <span className="temperature">6</span>
-          <span className="unit">°C</span>
-        </div>
-        <div className="col-6">
-          <ul>
-            <li>Precipitation: 15%</li>
-            <li>Humidity: 72%</li>
-            <li>Wind: 13 km/h</li>
-          </ul>
+          <div className="col-6">
+            <ul>
+              <li>Feels like: {WeatherData.feels} °C</li>
+              <li>Humidity: {WeatherData.humidity} %</li>
+              <li>Wind: {WeatherData.wind} km/h</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "89045e8b02ffo7bc061tb52f38ead08c";
+    let city = "Vancouver";
+    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(url).then(handleResponse);
+    return (
+      <BallTriangle
+        height={100}
+        width={100}
+        radius={5}
+        color="#ff0000"
+        ariaLabel="ball-triangle-loading"
+        wrapperClass={{}}
+        wrapperStyle=""
+        visible={true}
+      />
+    );
+  }
 }
