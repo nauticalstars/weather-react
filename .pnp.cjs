@@ -34,6 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["axios", "npm:1.3.5"],\
             ["bootstrap", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:5.2.3"],\
             ["react", "npm:18.2.0"],\
+            ["react-animated-weather", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:4.0.1"],\
             ["react-dom", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:18.2.0"],\
             ["react-loader-spinner", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:5.3.4"],\
             ["react-scripts", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:5.0.1"],\
@@ -14684,6 +14685,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-animated-weather", [\
+        ["npm:4.0.1", {\
+          "packageLocation": "./.yarn/cache/react-animated-weather-npm-4.0.1-ed16dcb3af-ad15f2aa7d.zip/node_modules/react-animated-weather/",\
+          "packageDependencies": [\
+            ["react-animated-weather", "npm:4.0.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:4.0.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-animated-weather-virtual-c1e68de05e/0/cache/react-animated-weather-npm-4.0.1-ed16dcb3af-ad15f2aa7d.zip/node_modules/react-animated-weather/",\
+          "packageDependencies": [\
+            ["react-animated-weather", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:4.0.1"],\
+            ["@types/prop-types", null],\
+            ["@types/react", null],\
+            ["@types/react-dom", null],\
+            ["prop-types", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/prop-types",\
+            "@types/react-dom",\
+            "@types/react",\
+            "prop-types",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-app-polyfill", [\
         ["npm:3.0.0", {\
           "packageLocation": "./.yarn/cache/react-app-polyfill-npm-3.0.0-e607e071bd-1bb031080a.zip/node_modules/react-app-polyfill/",\
@@ -17040,6 +17071,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["axios", "npm:1.3.5"],\
             ["bootstrap", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:5.2.3"],\
             ["react", "npm:18.2.0"],\
+            ["react-animated-weather", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:4.0.1"],\
             ["react-dom", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:18.2.0"],\
             ["react-loader-spinner", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:5.3.4"],\
             ["react-scripts", "virtual:dbc85a266e35ca5c4389fdf9f605d465500f49c18be9542390e694903ba9304965c6a10c24aafafd5eebccd61572216b070e784814baa9e7e17883241c3990ea#npm:5.0.1"],\
