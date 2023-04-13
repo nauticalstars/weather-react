@@ -6,19 +6,19 @@ function App() {
     <div className="App">
       <div className="Container">
         <Weather defaultCity="Winnipeg" />
-        <footer>
-          This project was coded by Daria Mikita{" "}
-          <a
-            href="https://github.com/nauticalstars/weather-react"
-            target="_blank"
-            rel="noreferrer"
-            className="text-decoration-none"
-          >
-            {" "}
-            My Github
-          </a>
-        </footer>
       </div>
+      <footer>
+        This project was coded by Daria Mikita{" "}
+        <a
+          href="https://github.com/nauticalstars/weather-react"
+          target="_blank"
+          rel="noreferrer"
+          className="text-decoration-none"
+        >
+          {" "}
+          My Github
+        </a>
+      </footer>
     </div>
   );
 }
