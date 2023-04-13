@@ -34,6 +34,7 @@
 }
 
 .Weather .temperature {
+  padding: 10px;
   font-weight: bold;
   font-size: 64px;
   font-weight: 400;
@@ -43,8 +44,7 @@
   top: 10px;
 }
 .Weather canvas {
-  height: 70px;
-  width: 70px;
+  padding: 10px;
   display: inline-block;
   margin-top: 5px;
   margin-right: 10px;
